@@ -57,6 +57,7 @@
         <Compile Include="Scripts\Enums.cs" />
         <Compile Include="Scripts\Extensions\GeneralExtensions.cs" />
         <Compile Include="Scripts\Extensions\ListExtensions.cs" />
+        <Compile Include="Scripts\Extensions\TransformExtensions.cs" />
         <Compile Include="Scripts\Extensions\VectorExtensions.cs" />
         <Compile Include="Scripts\GameEvents\BoolGameEvent.cs" />
         <Compile Include="Scripts\GameEvents\BoolGameEventListener.cs" />
