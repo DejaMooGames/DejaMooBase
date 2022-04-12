@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{E333DFFC-37C0-41EC-9B75-7C5767AEF264}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>GamesBase</RootNamespace>
+        <AssemblyName>GamesBase</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml" />
+        <Reference Include="UnityEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\UnityEditors\2020.3.31f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>D:\UnityEditors\2021.2.16f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="MonoBehaviour1.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Scripts\Attributes\ShowOnlyAttribute.cs" />
+        <Compile Include="Scripts\Constants.cs" />
+        <Compile Include="Scripts\Editor\FloatReferenceDrawer.cs" />
+        <Compile Include="Scripts\Editor\IntReferenceDrawer.cs" />
+        <Compile Include="Scripts\Editor\ShowOnlyDrawer.cs" />
+        <Compile Include="Scripts\Editor\StringReferenceDrawer.cs" />
+        <Compile Include="Scripts\Editor\UtilityFunctionData.cs" />
+        <Compile Include="Scripts\Editor\UtilityFunctions.cs" />
+        <Compile Include="Scripts\Enums.cs" />
+        <Compile Include="Scripts\Extensions\GeneralExtensions.cs" />
+        <Compile Include="Scripts\Extensions\ListExtensions.cs" />
+        <Compile Include="Scripts\Extensions\VectorExtensions.cs" />
+        <Compile Include="Scripts\GameEvents\BoolGameEvent.cs" />
+        <Compile Include="Scripts\GameEvents\BoolGameEventListener.cs" />
+        <Compile Include="Scripts\GameEvents\DelayedGameEventListener.cs" />
+        <Compile Include="Scripts\GameEvents\FloatGameEvent.cs" />
+        <Compile Include="Scripts\GameEvents\FloatGameEventListener.cs" />
+        <Compile Include="Scripts\GameEvents\GameEvent.cs" />
+        <Compile Include="Scripts\GameEvents\GameEventListener.cs" />
+        <Compile Include="Scripts\GameEvents\IntEventListener.cs" />
+        <Compile Include="Scripts\GameEvents\IntGameEvent.cs" />
+        <Compile Include="Scripts\GameEvents\StringEventListener.cs" />
+        <Compile Include="Scripts\LogTypeSprites.cs" />
+        <Compile Include="Scripts\PlayerLoopProxy.cs" />
+        <Compile Include="Scripts\RuntimeSets\RuntimeSet.cs" />
+        <Compile Include="Scripts\RuntimeSets\TransformSet.cs" />
+        <Compile Include="Scripts\ScriptableSets\AudioClipSet.cs" />
+        <Compile Include="Scripts\ScriptableSets\PrefabSet.cs" />
+        <Compile Include="Scripts\ScriptableSets\ScriptableSet.cs" />
+        <Compile Include="Scripts\SoPrefs\BoolPref.cs" />
+        <Compile Include="Scripts\SoPrefs\FloatPref.cs" />
+        <Compile Include="Scripts\SoPrefs\IntPref.cs" />
+        <Compile Include="Scripts\SoPrefs\IResetablePref.cs" />
+        <Compile Include="Scripts\SoPrefs\Preferences.cs" />
+        <Compile Include="Scripts\SoPrefs\SoPref.cs" />
+        <Compile Include="Scripts\SoPrefs\SoReferencer.cs" />
+        <Compile Include="Scripts\SoPrefs\StringPref.cs" />
+        <Compile Include="Scripts\SoVariables\SoFloat.cs" />
+        <Compile Include="Scripts\SoVariables\SoInt.cs" />
+        <Compile Include="Scripts\SoVariables\SoString.cs" />
+        <Compile Include="Scripts\SoVariables\SoVariable.cs" />
+        <Compile Include="Scripts\Utilities\EditorSet.cs" />
+        <Compile Include="Scripts\Utilities\GameObjectNotes.cs" />
+        <Compile Include="Scripts\Utilities\Singleton.cs" />
+        <Compile Include="Scripts\Utilities\SingletonScriptableObject.cs" />
+        <Compile Include="Scripts\Utilities\Utils.cs" />
+        <Compile Include="Scripts\VariableReferences\FloatReference.cs" />
+        <Compile Include="Scripts\VariableReferences\IntReference.cs" />
+        <Compile Include="Scripts\VariableReferences\StringReference.cs" />
+        <Compile Include="Scripts\VariableReferences\VariableReference.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Scripts\DejaMoo.asmdef" />
+      <Content Include="Scripts\Editor\DejaMoo.Editor.asmdef" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
