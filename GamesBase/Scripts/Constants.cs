@@ -1,6 +1,6 @@
 ﻿namespace DejaMoo
 {
-    public class Constants
+    public static class Constants
     {
         public const float FloatTol = .0001f;
         public class Mixer
