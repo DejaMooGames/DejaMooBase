@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace DejaMoo.RuntimeSets
 {
-    public class RuntimeSet<T> : ScriptableObject, IEnumerable<T>, IEnumerator<T>
+    public class RuntimeSet<T> : ScriptableObject, IEnumerable<T>
     {
         private readonly List<T> set = new List<T>();
         [SerializeField] private List<T> editorList = new List<T>();
@@ -99,26 +99,12 @@ namespace DejaMoo.RuntimeSets
         
         public IEnumerator<T> GetEnumerator()
         {
-            return this;
+            foreach (var t in set)
+            {
+                yield return t;
+            }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public bool MoveNext()
-        {
-            position++;
-            return position < set.Count;
-        }
-
-        public void Reset() => position = -1;
-
-        public T Current => set[position];
-
-        object IEnumerator.Current => Current;
-
-        public void Dispose() { }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
