@@ -71,22 +71,22 @@ public class UtilityFunctions : EditorWindow
 				gameObjects.Add(tform.gameObject);
 			}
 			
-			LayerFunctionsData.Instance.list.Clear();
+			UtilityFunctionData.Instance.layerObjects.Clear();
 			
 			foreach (var obj in gameObjects)
 			{
 				if (obj.layer != layerNum) continue;
-				LayerFunctionsData.Instance.list.Add(obj);
+				UtilityFunctionData.Instance.layerObjects.Add(obj);
 			}
 		}
 		else
 		{
 			gameObjects = FindObjectsOfType<GameObject>(true).ToList();
-			LayerFunctionsData.Instance.list.Clear();
+			UtilityFunctionData.Instance.layerObjects.Clear();
 			foreach (var obj in gameObjects)
 			{
 				if (obj.layer != layerNum) continue;
-				LayerFunctionsData.Instance.list.Add(obj);
+				UtilityFunctionData.Instance.layerObjects.Add(obj);
 			}
 		}
 		#else
